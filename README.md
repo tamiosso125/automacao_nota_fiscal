@@ -12,9 +12,6 @@ Este projeto é uma aplicação em Python que lê informações de notas fiscais
 
 1. Certifique-se de ter o Python instalado. Você pode baixá-lo em [python.org](https://www.python.org/downloads/).
 2. Clone este repositório para o seu ambiente local:
-
-git clone https://github.com/seu_usuario/nf-xml-to-excel.git
-
 3. Instale as dependências utilizando pip:
 
 ```
