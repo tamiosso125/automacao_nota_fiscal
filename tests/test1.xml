@@ -1,0 +1,26 @@
+<notaFiscal>
+    <numero>001</numero>
+    <data>2024-02-23</data>
+    <cliente>
+        <nome>Fulano de Tal</nome>
+        <cpf>123.456.789-00</cpf>
+        <endereco>Rua Exemplo, 123</endereco>
+        <cidade>Cidade Exemplo</cidade>
+        <estado>Estado Exemplo</estado>
+    </cliente>
+    <itens>
+        <item>
+            <descricao>Produto 1</descricao>
+            <quantidade>2</quantidade>
+            <valorUnitario>50.00</valorUnitario>
+            <total>100.00</total>
+        </item>
+        <item>
+            <descricao>Produto 2</descricao>
+            <quantidade>1</quantidade>
+            <valorUnitario>75.00</valorUnitario>
+            <total>75.00</total>
+        </item>
+    </itens>
+    <total>175.00</total>
+</notaFiscal>

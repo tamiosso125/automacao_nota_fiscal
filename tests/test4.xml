@@ -1,0 +1,26 @@
+<notaFiscal>
+    <numero>004</numero>
+    <data>2024-02-26</data>
+    <cliente>
+        <nome>Outro Cliente</nome>
+        <cnpj>555.666.777-88</cnpj>
+        <endereco>Rua do Cliente, 999</endereco>
+        <cidade>Cidade Qualquer</cidade>
+        <estado>Estado Qualquer</estado>
+    </cliente>
+    <itens>
+        <item>
+            <descricao>Produto 7</descricao>
+            <quantidade>4</quantidade>
+            <valorUnitario>15.00</valorUnitario>
+            <total>60.00</total>
+        </item>
+        <item>
+            <descricao>Produto 8</descricao>
+            <quantidade>2</quantidade>
+            <valorUnitario>35.00</valorUnitario>
+            <total>70.00</total>
+        </item>
+    </itens>
+    <total>130.00</total>
+</notaFiscal>

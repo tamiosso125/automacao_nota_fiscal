@@ -1,0 +1,26 @@
+<notaFiscal>
+    <numero>003</numero>
+    <data>2024-02-25</data>
+    <cliente>
+        <nome>Beltrano de Tal</nome>
+        <cpf>111.222.333-44</cpf>
+        <endereco>Rua da Amostra, 789</endereco>
+        <cidade>Cidade Modelo</cidade>
+        <estado>Estado Modelo</estado>
+    </cliente>
+    <itens>
+        <item>
+            <descricao>Produto 5</descricao>
+            <quantidade>5</quantidade>
+            <valorUnitario>20.00</valorUnitario>
+            <total>100.00</total>
+        </item>
+        <item>
+            <descricao>Produto 6</descricao>
+            <quantidade>3</quantidade>
+            <valorUnitario>25.00</valorUnitario>
+            <total>75.00</total>
+        </item>
+    </itens>
+    <total>175.00</total>
+</notaFiscal>

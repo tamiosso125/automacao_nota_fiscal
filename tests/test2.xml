@@ -1,0 +1,26 @@
+<notaFiscal>
+    <numero>002</numero>
+    <data>2024-02-24</data>
+    <cliente>
+        <nome>Ciclano de Tal</nome>
+        <cpf>987.654.321-00</cpf>
+        <endereco>Rua do Exemplo, 456</endereco>
+        <cidade>Cidade Teste</cidade>
+        <estado>Estado Teste</estado>
+    </cliente>
+    <itens>
+        <item>
+            <descricao>Produto 3</descricao>
+            <quantidade>3</quantidade>
+            <valorUnitario>30.00</valorUnitario>
+            <total>90.00</total>
+        </item>
+        <item>
+            <descricao>Produto 4</descricao>
+            <quantidade>2</quantidade>
+            <valorUnitario>40.00</valorUnitario>
+            <total>80.00</total>
+        </item>
+    </itens>
+    <total>170.00</total>
+</notaFiscal>
