@@ -1,31 +1,47 @@
-Notas Fiscais em XML para Excel
+# Notas Fiscais em XML para Excel
+
 Este projeto é uma aplicação em Python que lê informações de notas fiscais em formato XML e as salva em um arquivo Excel (.xlsx).
 
-Tecnologias Utilizadas
-Python: Linguagem de programação principal do projeto.
-Pandas: Biblioteca Python para manipulação e análise de dados, utilizada para criar e manipular o DataFrame que será salvo no Excel.
-xmltodict: Biblioteca Python para converter XML em dicionários, utilizada para analisar os arquivos XML das notas fiscais.
-Instalação
-Certifique-se de ter o Python instalado. Você pode baixá-lo em python.org.
-Clone este repositório para o seu ambiente local:
-bash
-Copy code
+## Tecnologias Utilizadas
+
+- **Python**: Linguagem de programação principal do projeto.
+- **Pandas**: Biblioteca Python para manipulação e análise de dados, utilizada para criar e manipular o DataFrame que será salvo no Excel.
+- **xmltodict**: Biblioteca Python para converter XML em dicionários, utilizada para analisar os arquivos XML das notas fiscais.
+
+## Instalação
+
+1. Certifique-se de ter o Python instalado. Você pode baixá-lo em [python.org](https://www.python.org/downloads/).
+2. Clone este repositório para o seu ambiente local:
+
 git clone https://github.com/seu_usuario/nf-xml-to-excel.git
-Instale as dependências utilizando pip:
+
+csharp
 Copy code
+
+3. Instale as dependências utilizando pip:
+
 pip install -r requirements.txt
-Utilização
-Coloque seus arquivos XML de notas fiscais na pasta tests.
-Execute o script Python main.py:
-css
+
+markdown
 Copy code
+
+## Utilização
+
+1. Coloque seus arquivos XML de notas fiscais na pasta `tests`.
+2. Execute o script Python `main.py`:
+
 python main.py
-Após a execução, um arquivo Excel chamado NotasFiscais.xlsx será gerado na pasta raiz do projeto, contendo as informações das notas fiscais em formato de tabela.
-Exemplo de Funcionamento
+
+php
+Copy code
+
+3. Após a execução, um arquivo Excel chamado `NotasFiscais.xlsx` será gerado na pasta raiz do projeto, contendo as informações das notas fiscais em formato de tabela.
+
+## Exemplo de Funcionamento
+
 Suponha que temos o seguinte arquivo XML de nota fiscal:
 
-xml
-Copy code
+```xml
 <notaFiscal>
     <numero>001</numero>
     <data>2024-02-23</data>
@@ -52,5 +68,3 @@ Copy code
     </itens>
     <total>175.00</total>
 </notaFiscal>
-Este arquivo XML será lido pelo script Python e as informações serão armazenadas em um arquivo Excel, com cada item da nota fiscal em uma linha separada.
-
