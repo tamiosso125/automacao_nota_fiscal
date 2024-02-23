@@ -4,34 +4,55 @@ import pandas as pd
 
 all_tests = os.listdir("tests")
 
-def get_test(test):
-    with open(f"tests/{test}", 'rb') as test_file:
-            info_test = xmltodict.parse(test_file)
-            number = info_test['notaFiscal']['numero']
-            date = info_test['notaFiscal']['data']
-            name = info_test['notaFiscal']['cliente']['nome']
-            if "cnpj" in info_test['notaFiscal']['cliente']:
-                cnpj = info_test['notaFiscal']['cliente']['cnpj']
-            else:
-                cnpj = 'Não Informado'
-            if "cpf" in info_test['notaFiscal']['cliente']:
-                cpf = info_test['notaFiscal']['cliente']['cpf']
-            else:
-                cpf = 'Não Informado'
-
-            adress =  info_test['notaFiscal']['cliente']['endereco']
-            city = info_test['notaFiscal']['cliente']['cidade']
-            state = info_test['notaFiscal']['cliente']['estado']
-            itens = info_test['notaFiscal']['itens']['item']
-            total = info_test['notaFiscal']['total']
-            values.append([number, date, name, cpf, cnpj, adress, city, state, itens, total])
-
-
-colums = ['numero_nota', 'data_emissao', 'nome_cliente', 'cpf', 'cnpj', 'endereco', 'cidade', 'estado', 'item', 'total']
-values = []
-
-for test in all_tests:
-    get_test(test)
+def formatar_item(item):
+    descricao = item['descricao']
+    quantidade = int(item['quantidade'])
+    valor_unitario = float(item['valorUnitario'])
+    total = float(item['total'])
     
-tabela = pd.DataFrame(columns=colums, data=values)
+    return f"{quantidade}x {descricao} (R${valor_unitario:.2f} cada) = R${total:.2f}"
+
+def get_test(test, max_itens):
+    with open(f"tests/{test}", 'rb') as test_file:
+        info_test = xmltodict.parse(test_file)['notaFiscal']
+        
+        cliente = info_test['cliente']
+        try:
+            cnpj = cliente['cnpj']
+        except KeyError:
+            cnpj = 'Não Informado'
+        try:
+            cpf = cliente['cpf']
+        except KeyError:
+            cpf = 'Não Informado'
+
+        itens = {f'item_{i+1}': formatar_item(item) for i, item in enumerate(info_test['itens']['item'])}
+        
+        # Preencher com None para garantir que todas as linhas tenham o mesmo número de colunas
+        for i in range(len(itens), max_itens):
+            itens[f'item_{i+1}'] = None
+        
+        total = info_test['total']
+        
+        values.append({
+            'numero_nota': info_test['numero'],
+            'data_emissao': info_test['data'],
+            'nome_cliente': cliente['nome'],
+            'cpf': cpf,
+            'cnpj': cnpj,
+            'endereco': cliente['endereco'],
+            'cidade': cliente['cidade'],
+            'estado': cliente['estado'],
+            **itens,
+            'total': f'R${total}'
+        })
+
+# Encontrar o número máximo de itens em todas as notas fiscais
+max_itens = max(len(xmltodict.parse(open(f"tests/{test}", 'rb'))['notaFiscal']['itens']['item']) for test in all_tests)
+
+values = []
+for test in all_tests:
+    get_test(test, max_itens)
+
+tabela = pd.DataFrame(values)
 tabela.to_excel("NotasFiscais.xlsx", index=False)

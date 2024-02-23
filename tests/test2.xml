@@ -21,6 +21,12 @@
             <valorUnitario>40.00</valorUnitario>
             <total>80.00</total>
         </item>
+         <item>
+            <descricao>Produto fas</descricao>
+            <quantidade>2</quantidade>
+            <valorUnitario>40.00</valorUnitario>
+            <total>80.00</total>
+        </item>
     </itens>
     <total>170.00</total>
 </notaFiscal>
