@@ -53,3 +53,4 @@ Suponha que temos o seguinte arquivo XML de nota fiscal:
 </notaFiscal>
 ```
 Este arquivo XML será lido pelo script Python e as informações serão armazenadas em um arquivo Excel, com cada item da nota fiscal em uma linha separada.
+
