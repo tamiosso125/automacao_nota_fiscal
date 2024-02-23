@@ -15,15 +15,9 @@ Este projeto é uma aplicação em Python que lê informações de notas fiscais
 
 git clone https://github.com/seu_usuario/nf-xml-to-excel.git
 
-csharp
-Copy code
-
 3. Instale as dependências utilizando pip:
 
 pip install -r requirements.txt
-
-markdown
-Copy code
 
 ## Utilização
 
@@ -32,8 +26,6 @@ Copy code
 
 python main.py
 
-php
-Copy code
 
 3. Após a execução, um arquivo Excel chamado `NotasFiscais.xlsx` será gerado na pasta raiz do projeto, contendo as informações das notas fiscais em formato de tabela.
 
@@ -68,3 +60,4 @@ Suponha que temos o seguinte arquivo XML de nota fiscal:
     </itens>
     <total>175.00</total>
 </notaFiscal>
+Este arquivo XML será lido pelo script Python e as informações serão armazenadas em um arquivo Excel, com cada item da nota fiscal em uma linha separada.
