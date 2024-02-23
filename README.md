@@ -14,18 +14,10 @@ Este projeto é uma aplicação em Python que lê informações de notas fiscais
 2. Clone este repositório para o seu ambiente local:
 3. Instale as dependências utilizando pip:
 
-```
-pip install -r requirements.txt
-```
 ## Utilização
 
 1. Coloque seus arquivos XML de notas fiscais na pasta `tests`.
 2. Execute o script Python `main.py`:
-
-```
-python main.py
-```
-
 3. Após a execução, um arquivo Excel chamado `NotasFiscais.xlsx` será gerado na pasta raiz do projeto, contendo as informações das notas fiscais em formato de tabela.
 
 ## Exemplo de Funcionamento
