@@ -54,3 +54,4 @@ Suponha que temos o seguinte arquivo XML de nota fiscal:
 ```
 Este arquivo XML será lido pelo script Python e as informações serão armazenadas em um arquivo Excel, com cada item da nota fiscal em uma linha separada.
 
+![Screenshot_3](https://github.com/tamiosso125/automacao_nota_fiscal/assets/62403084/5b313b6b-16d3-4ea7-a3f4-fd14316b1810)
