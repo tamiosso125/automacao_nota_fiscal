@@ -55,4 +55,22 @@ for test in all_tests:
     get_test(test, max_itens)
 
 tabela = pd.DataFrame(values)
-tabela.to_excel("NotasFiscais.xlsx", index=False)
+if os.path.exists('NotasFiscais.xlsx'):
+    # Carregar o arquivo existente para atualização
+    tabela_existente = pd.read_excel('NotasFiscais.xlsx')
+    
+    # Verificar se as colunas da tabela existente correspondem às colunas da nova tabela
+    if set(tabela.columns) == set(tabela_existente.columns):
+        # Atualizar a tabela existente
+        tabela_existente = pd.concat([tabela_existente, tabela], ignore_index=True)
+        
+        # Salvar a tabela atualizada
+        tabela_existente.to_excel("NotasFiscais.xlsx", index=False)
+        
+        print("Tabela existente atualizada com sucesso!")
+    else:
+        print("As colunas da tabela existente não correspondem às colunas da nova tabela. Não é possível atualizar.")
+else:
+    # Salvar a nova tabela, pois não existe uma tabela existente
+    tabela.to_excel("NotasFiscais.xlsx", index=False)
+    print("Nova tabela criada com sucesso!")
